@@ -18,8 +18,7 @@ function layout(title, body) {
     <h1>Reflected XSS Simulation</h1>
     <hr />
     ${body}
-  </body>
-  <footer>
+    <footer>
       <p class="project-info">
         Web Security Project – Reflected XSS Demo
       </p>
@@ -27,6 +26,7 @@ function layout(title, body) {
         🔗 <a href="https://github.com/nongdam/reflected_xss_sinario" target="_blank">GitHub Repository</a>
       </p>
     </footer>
+  </body>
   </html>
   `;
 }

@@ -19,6 +19,14 @@ function layout(title, body) {
     <hr />
     ${body}
   </body>
+  <footer>
+      <p class="project-info">
+        Web Security Project – Reflected XSS Demo
+      </p>
+      <p class="github-link">
+        🔗 <a href="https://github.com/nongdam/reflected_xss_sinario" target="_blank">GitHub Repository</a>
+      </p>
+    </footer>
   </html>
   `;
 }

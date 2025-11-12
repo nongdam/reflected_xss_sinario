@@ -80,3 +80,21 @@ p.preview {
   border-radius: 6px;
   box-shadow: 0 1px 3px rgba(0,0,0,0.05);
 }
+
+footer {
+  margin-top: 40px;
+  padding-top: 16px;
+  border-top: 1px solid #ddd;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+footer a {
+  color: #0070c9;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}

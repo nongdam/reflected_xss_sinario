@@ -1,29 +1,11 @@
 const express = require('express');
 const router = express.Router();
 
-// 레이아웃
-function layout(title, body) {
-  return `
-  <!doctype html>
-  <html lang="ko">
-  <head>
-    <meta charset="utf-8" />
-    <title>${title}</title>
-    <link rel="stylesheet" href="/style.css" />
-  </head>
-  <body>
-    <h1>Reflected XSS Simulation</h1>
-    <hr />
-    ${body}
-  </body>
-  </html>
-  `;
-}
-
 router.get('/', (req, res) => {
+    const layout = req.app.locals.layout;
   const inputSearch = req.query.inputSearch || '';
 
-  res.send(layout('검색', `
+  res.send(layout('home', `
     <div class="card">
       <h2>검색 페이지</h2>
       <form method="get" action="/">

@@ -9,7 +9,7 @@ function layout(title, body) {
   <head>
     <meta charset="utf-8" />
     <title>${title}</title>
-    <link rel="stylesheet" href="/public/style.css" />
+    <link rel="stylesheet" href="/style.css" />
   </head>
   <body>
     <h1>Reflected XSS Simulation</h1>
@@ -21,17 +21,19 @@ function layout(title, body) {
 }
 
 router.get('/', (req, res) => {
-  const inputSearch = req.query.q || '';
+  const inputSearch = req.query.inputSearch || '';
 
   res.send(layout('검색', `
-    <h2>검색 페이지</h2>
-    <form method="get" action="/">
-      <input type="text" name="q" value="${inputSearch}" placeholder="검색어 입력" />
-      <button type="submit">검색</button>
-    </form>
+    <div class="card">
+      <h2>검색 페이지</h2>
+      <form method="get" action="/">
+        <input type="text" name="inputSearch" value="${inputSearch}" placeholder="검색어 입력" />
+        <button type="submit">검색</button>
+      </form>
 
-    <h3>검색 내역</h3>
-    <p>검색어: ${inputSearch}</p>
+      <h3>검색어 미리보기</h3>
+      <p class="preview">${inputSearch}</p>
+    </div>
   `));
 });
 
